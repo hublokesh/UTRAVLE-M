@@ -1,0 +1,953 @@
+@@ -0,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSP Mate - Find Your Travel Partner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Font -->
+    <style>
+        /* General page styling */
+        body {
+            font-family: 'Roboto', sans-serif; /* Changed font */
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+        }
+        /* Introduction section with a bold theme */
+        .intro {
+            background-color: #fbc02d; /* Yellow */
+            color: #000;
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 5px solid #d32f2f; /* Red border */
+        }
+        .intro h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        .intro p {
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+        /* Inquiry section */
+        .inquiry {
+            text-align: center;
+            padding: 15px;
+            font-size: 1.2em;
+            background-color: #d32f2f; /* Dark red */
+            color: #fff;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        /* Search/Match Form */
+        .search-form {
+            padding: 30px;
+            text-align: center;
+            background-color: #ff5722; /* Orange */
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            margin: 20px;
+            border-radius: 10px;
+        }
+        .search-form h2 {
+            color: #fbc02d; /* Yellow */
+            font-size: 2em;
+        }
+        .search-form input[type="text"],
+        .search-form input[type="date"] {
+            padding: 12px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid #d32f2f; /* Red border */
+            width: 220px;
+        }
+        .search-form button {
+            padding: 12px 25px;
+            background-color: #d32f2f; /* Red */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        .search-form button:hover {
+            background-color: #b71c1c; /* Darker red */
+        }
+        /* Travel Feed */
+        .travel-feed {
+            padding: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #212121; /* Dark background for travel feed */
+            border-radius: 10px;
+        }
+        .travel-feed h2 {
+            text-align: center;
+            color: #fbc02d; /* Yellow */
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .travel-item {
+            background-color: #ff5722; /* Orange */
+            border: 1px solid #d32f2f; /* Red border */
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .travel-item h3 {
+            margin: 0;
+            color: #fff; /* White text */
+        }
+        .travel-item p {
+            margin: 5px 0;
+            color: #fff; /* White text */
+        }
+        .contact-button {
+            padding: 10px 20px;
+            background-color: #d32f2f; /* Dark red */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        .contact-button:hover {
+            background-color: #b71c1c; /* Darker red */
+        }
+        /* Image section */
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container p {
+            font-size: 1.5em;
+            color: #ff5722; /* Orange */
+            margin: 20px 0;
+        }
+        /* Testimonials Section */
+        .testimonials {
+            padding: 30px;
+            margin: 20px;
+            border-radius: 10px;
+            background-color: #d32f2f; /* Dark red */
+        }
+        .testimonials h2 {
+            text-align: center;
+            color: #fff; /* White text */
+            margin-bottom: 20px;
+        }
+        .testimonial {
+            font-style: italic;
+            margin: 10px 0;
+            color: #fff; /* White text */
+        }
+        /* Footer Section */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #d32f2f; /* Dark red */
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Introduction Section -->
+    <div class="intro">
+        <h1>Welcome to PSP Mate!</h1>
+        <p>Your adventure starts here! Connect with fellow travelers heading to the same destination and make unforgettable memories together.</p>
+    </div>
+    <!-- Inquiry Section -->
+    <div class="inquiry">
+        <p>Got questions? Reach out to us at: <a href="mailto:pallokendra16@gmail.com" style="color: #fff;">pallokendra16@gmail.com</a></p>
+        <p>Or call us at: <strong>9456110402</strong></p>
+    </div>
+    <!-- Text Section -->
+    <div class="image-container">
+        <p>Explore the beauty of Devbhoomi!</p>
+    </div>
+    <!-- Search/Match Form -->
+    <div class="search-form">
+        <h2>Find Your Perfect Travel Buddy</h2>
+        <form>
+            <input type="text" placeholder="Where are you headed?" required>
+            <input type="date" placeholder="When are you traveling?" required>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <!-- Travel Feed Section -->
+    <div class="travel-feed">
+        <h2>Upcoming Travel Plans in Uttarakhand</h2>
+        
+        <div class="travel-item">
+            <div>
+                <h3>Destination: Nainital</h3>
+                <p>Date: Dec 5, 2024</p>
+            </div>
+            <button class="contact-button">Contact</button>
+        </div>
+        <div class="travel-item">
+            <div>
+                <h3>Destination: Mussoorie</h3>
+                <p>Date: Dec 12, 2024</p>
+            </div>
+            <button class="contact-button">Contact</button>
+        </div>
+        <div class="travel-item">
+            <div>
+                <h3>Destination: Rishikesh</h3>
+                <p>Date: Dec 15, 2024</p>
+            </div>
+            <button class="contact-button">Contact</button>
+        </div>
+        <div class="travel-item">
+            <div>
+                <h3>Destination: Dehradun</h3>
+                <p>Date: Jan 10, 2025</p>
+            </div>
+            <button class="contact-button">Contact</button>
+        </div>
+        <div class="travel-item">
+            <div>
+                <h3>Destination: Auli</h3>
+                <p>Date: Jan 20, 2025</p>
+            </div>
+            <button class="contact-button">Contact</button>
+        </div>
+        <div class="travel-item">
+            <div>
+                <h3>Destination: Kedarnath</h3>
+                <p>Date: Feb 5, 2025</p>
+            </div>
+            <button class="contact-button">Contact</button>
+        </div>
+        <div class="travel-item">
+            <div>
+                <h3>Destination: Haridwar</h3>
+                <p>Date: Feb 12, 2025</p>
+            </div>
+            <button class="contact-button">Contact</button>
+        </div>
+        <div class="travel-item">
+            <div>
+                <h3>Destination: Badrinath</h3>
+                <p>Date: Feb 20, 2025</p>
+            </div>
+            <button class="contact-button">Contact</button>
+        </div>
+        <script>
+            // Function to handle form submission
+            function handleFormSubmit(event) {
+                event.preventDefault(); // Prevent the default form submission
+        
+                // Get the input values
+                const destination = document.querySelector('input[type="text"]').value;
+                const travelDate = document.querySelector('input[type="date"]').value;
+        
+                // Display the results (In a real application, you would send this to a server)
+                alert(`Searching for travel partners to ${destination} on ${travelDate}`);
+            }
+        
+            // Add event listener to the form
+            document.addEventListener('DOMContentLoaded', function () {
+                const form = document.querySelector('.search-form form');
+                form.addEventListener('submit', handleFormSubmit);
+            });
+        </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSP Mate - Find Your Travel Partner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Font -->
+    <style>
+        /* (Your existing CSS here) */
+    </style>
+</head>
+<body>
+    <!-- Your existing HTML here -->
+    <!-- Search/Match Form -->
+    <div class="search-form">
+        <h2>Find Your Perfect Travel Buddy</h2>
+        <form>
+            <input type="text" placeholder="Where are you headed?" required>
+            <input type="date" placeholder="When are you traveling?" required>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <!-- (Your existing HTML here) -->
+    <script>
+        // Function to handle form submission
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent the default form submission
+            // Get the input values
+            const destination = document.querySelector('input[type="text"]').value;
+            const travelDate = document.querySelector('input[type="date"]').value;
+            // Display the results (In a real application, you would send this to a server)
+            alert(`Searching for travel partners to ${destination} on ${travelDate}`);
+        }
+        // Add event listener to the form
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('.search-form form');
+            form.addEventListener('submit', handleFormSubmit);
+        });
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uttarakhand Destinations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            margin-top: 20px;
+        }
+        .category {
+            background-color: #FF69B4;
+            color: white;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin: 10px 20px;
+        }
+        .content {
+            padding: 10px 20px;
+            display: none;
+            background-color: #FAFAFA;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 0 20px 10px;
+        }
+        .content p {
+            margin: 5px 0;
+        }
+    </style>
+    <script>
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Discover Uttarakhand</h1>
+
+    <div class="category" onclick="toggleContent('hillStations')">Hill Stations</div>
+    <div class="content" id="hillStations">
+        <p>1. Nainital – Known for Naini Lake, scenic viewpoints, and temples.</p>
+        <p>2. Mussoorie – Famous for its colonial charm, Mall Road, and Kempty Falls.</p>
+        <p>3. Ranikhet – A quiet hill station with beautiful landscapes and temples.</p>
+        <p>4. Almora – Known for its cultural heritage and Himalayan views.</p>
+        <p>5. Bhimtal – Lake destination with boating and nature walks.</p>
+        <p>6. Lansdowne – A serene town with pine forests.</p>
+        <p>7. Kausani – Offers panoramic views of Himalayan peaks.</p>
+        <p>8. Mukteshwar – Known for apple orchards and adventure sports.</p>
+        <p>9. Chopta – Starting point for Tungnath trek, "Mini Switzerland of India."</p>
+    </div>
+
+    <div class="category" onclick="toggleContent('pilgrimageSites')">Pilgrimage Sites</div>
+    <div class="content" id="pilgrimageSites">
+        <p>1. Haridwar – Holy city on the Ganges, famous for Ganga Aarti.</p>
+        <p>2. Rishikesh – Known as the Yoga capital and gateway for Char Dham.</p>
+        <p>3. Badrinath – Part of the Char Dham pilgrimage in the Garhwal Himalayas.</p>
+        <p>4. Kedarnath – Known for Kedarnath Temple, one of the twelve Jyotirlingas.</p>
+        <p>5. Gangotri – Sacred place, origin of River Ganga.</p>
+        <p>6. Yamunotri – Known for the Yamunotri Temple, source of River Yamuna.</p>
+        <p>7. Hemkund Sahib – Sikh pilgrimage site with a high-altitude lake.</p>
+    </div>
+
+    <div class="category" onclick="toggleContent('adventure')">Adventure & Trekking Destinations</div>
+    <div class="content" id="adventure">
+        <p>1. Auli – A skiing destination with breathtaking Himalayan views.</p>
+        <p>2. Rishikesh – Famous for river rafting and bungee jumping.</p>
+        <p>3. Valley of Flowers – UNESCO site with vibrant blooms.</p>
+        <p>4. Roopkund – Known for the mysterious lake with skeletal remains.</p>
+        <p>5. Dayara Bugyal – High-altitude meadow trek with scenic views.</p>
+        <p>6. Pindari Glacier – Trekking destination with majestic glacier views.</p>
+        <p>7. Nanda Devi National Park – Famous for trekking and biodiversity.</p>
+        <p>8. Kedarkantha – Winter trek with panoramic mountain views.</p>
+        <p>9. Nag Tibba – Beginner-friendly trek near Mussoorie.</p>
+        <p>10. Har Ki Dun – Valley trek with lush landscapes and mountain views.</p>
+    </div>
+
+    <div class="category" onclick="toggleContent('wildlife')">Wildlife Sanctuaries & National Parks</div>
+    <div class="content" id="wildlife">
+        <p>1. Jim Corbett National Park – Known for tiger reserve and safari.</p>
+        <p>2. Rajaji National Park – Famous for elephants and diverse wildlife.</p>
+        <p>3. Binsar Wildlife Sanctuary – Great for bird-watching and Himalayan views.</p>
+        <p>4. Assan Barrage Bird Sanctuary – Bird-watching paradise for migratory birds.</p>
+        <p>5. Govind Wildlife Sanctuary – Scenic landscapes and Snow Leopards.</p>
+    </div>
+
+    <div class="category" onclick="toggleContent('lakes')">Lakes</div>
+    <div class="content" id="lakes">
+        <p>1. Naini Lake – Famous lake in Nainital, eye-shaped.</p>
+        <p>2. Sattal – Group of seven interconnected freshwater lakes.</p>
+        <p>3. Bhimtal Lake – Large lake with an island in the middle.</p>
+        <p>4. Naukuchiatal – "Lake of nine corners" with boating activities.</p>
+        <p>5. Hemkund Lake – High-altitude glacial lake near Hemkund Sahib.</p>
+        <p>6. Dodital – Freshwater lake popular for trekking and trout fishing.</p>
+    </div>
+
+    <div class="category" onclick="toggleContent('uniquePlaces')">Unique Places</div>
+    <div class="content" id="uniquePlaces">
+        <p>1. Binsar – Known for its wildlife sanctuary and Himalayan views.</p>
+        <p>2. Chakrata – Peaceful town, ideal for trekking.</p>
+        <p>3. Munsiyari – Offers views of Panchachuli peaks, trekking hub.</p>
+        <p>4. Tehri Dam – One of the tallest dams, popular for water sports.</p>
+        <p>5. Abbott Mount – Old-world charm and solitude.</p>
+        <p>6. Kanatal – Secluded hill station with camping and adventure.</p>
+    </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uttarakhand Destinations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            margin-top: 20px;
+        }
+        .category {
+            background-color: #FF69B4;
+            color: white;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin: 10px 20px;
+        }
+        .content {
+            padding: 10px 20px;
+            display: none;
+            background-color: #FAFAFA;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 0 20px 10px;
+        }
+        .content p {
+            margin: 5px 0;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+        }
+        .button {
+            background-color: #FF69B4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #FF1493;
+        }
+    </style>
+    <script>
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        }
+        function openChat() {
+            alert("Opening chat... (Implement chat functionality here)");
+        }
+        function transferMoney() {
+            alert("Initiating money transfer... (Implement money transfer functionality here)");
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Explore Uttarakhand</h1>
+
+    <div class="category" onclick="toggleContent('hillStations')">Hill Stations</div>
+    <div class="content" id="hillStations">
+        <p>1. Nainital – Best to visit: March to June</p>
+        <p>2. Mussoorie – Best to visit: April to June, September to November</p>
+        <p>3. Ranikhet – Best to visit: March to July, September to November</p>
+        <p>4. Almora – Best to visit: April to June</p>
+        <p>5. Bhimtal – Best to visit: March to June, September to November</p>
+        <p>6. Lansdowne – Best to visit: March to November</p>
+        <p>7. Kausani – Best to visit: April to June, September to November</p>
+        <p>8. Mukteshwar – Best to visit: March to June, September to November</p>
+        <p>9. Chopta – Best to visit: March to June, October to December</p>
+    </div>
+
+    <div class="category" onclick="toggleContent('pilgrimageSites')">Pilgrimage Sites</div>
+    <div class="content" id="pilgrimageSites">
+        <p>1. Haridwar – Best to visit: February to April, August to October</p>
+        <p>2. Rishikesh – Best to visit: September to November, March to May</p>
+        <p>3. Badrinath – Best to visit: May to October</p>
+        <p>4. Kedarnath – Best to visit: May to October</p>
+        <p>5. Gangotri – Best to visit: April to June, September to October</p>
+        <p>6. Yamunotri – Best to visit: May to October</p>
+        <p>7. Hemkund Sahib – Best to visit: May to October</p>
+    </div>
+
+    <div class="category" onclick="toggleContent('adventure')">Adventure & Trekking Destinations</div>
+    <div class="content" id="adventure">
+        <p>1. Auli – Best to visit: December to February for skiing</p>
+        <p>2. Rishikesh – Best to visit: March to May, September to November for rafting</p>
+        <p>3. Valley of Flowers – Best to visit: July to September</p>
+        <p>4. Roopkund – Best to visit: May to October</p>
+        <p>5. Dayara Bugyal – Best to visit: May to October</p>
+        <p>6. Pindari Glacier – Best to visit: May to October</p>
+        <p>7. Nanda Devi National Park – Best to visit: April to October</p>
+        <p>8. Kedarkantha – Best to visit: December to April for winter trekking</p>
+        <p>9. Nag Tibba – Best to visit: March to June, September to November</p>
+        <p>10. Har Ki Dun – Best to visit: March to June, September to December</p>
+    </div>
+
+    <div class="category" onclick="toggleContent('wildlife')">Wildlife Sanctuaries & National Parks</div>
+    <div class="content" id="wildlife">
+        <p>1. Jim Corbett National Park – Best to visit: November to February</p>
+        <p>2. Rajaji National Park – Best to visit: November to February</p>
+        <p>3. Binsar Wildlife Sanctuary – Best to visit: October to March</p>
+        <p>4. Assan Barrage Bird Sanctuary – Best to visit: November to February</p>
+        <p>5. Govind Wildlife Sanctuary – Best to visit: April to June, October to November</p>
+    </div>
+
+    <div class="category" onclick="toggleContent('lakes')">Lakes</div>
+    <div class="content" id="lakes">
+        <p>1. Naini Lake – Best to visit: March to June, September to November</p>
+        <p>2. Sattal – Best to visit: March to June, September to November</p>
+        <p>3. Bhimtal Lake – Best to visit: March to June, September to November</p>
+        <p>4. Naukuchiatal – Best to visit: March to June, September to November</p>
+        <p>5. Hemkund Lake – Best to visit: June to October</p>
+        <p>6. Dodital – Best to visit: April to June, October to November</p>
+    </div>
+
+    <div class="category" onclick="toggleContent('uniquePlaces')">Unique Places</div>
+    <div class="content" id="uniquePlaces">
+        <p>1. Binsar – Best to visit: October to March</p>
+        <p>2. Chakrata – Best to visit: April to June, September to November</p>
+        <p>3. Munsiyari – Best to visit: March to June, September to November</p>
+        <p>4. Tehri Dam – Best to visit: March to June, September to November</p>
+        <p>5. Abbott Mount – Best to visit: April to June, September to November</p>
+        <p>6. Kanatal – Best to visit: April to June, September to November</p>
+    </div>
+
+    <!-- Chat and Money Transfer Buttons -->
+    <div class="buttons">
+        <button class="button" onclick="openChat()">Chat with Us</button>
+        <button class="button" onclick="transferMoney()">Transfer Money</button>
+    </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uttarakhand Destinations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            margin-top: 20px;
+        }
+        .category {
+            background-color: #FF69B4;
+            color: white;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin: 10px 20px;
+        }
+        .content {
+            padding: 10px 20px;
+            display: none;
+            background-color: #FAFAFA;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 0 20px 10px;
+        }
+        .content p {
+            margin: 5px 0;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+        }
+        .button {
+            background-color: #FF69B4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #FF1493;
+        }
+    </style>
+    <script>
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        }
+        function openChat() {
+            alert("Opening chat... (Implement chat functionality here)");
+        }
+        function transferMoney() {
+            alert("Initiating money transfer... (Implement money transfer functionality here)");
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Explore Uttarakhand</h1>
+
+    <div class="category" onclick="toggleContent('hillStations')">Hill Stations</div>
+    <div class="content" id="hillStations">
+        <p>1. Nainital – Best to visit: March to June</p>
+        <p>2. Mussoorie – Best to visit: April to June, September to November</p>
+        <p>3. Ranikhet – Best to visit: March to July, September to November</p>
+        <p>4. Almora – Best to visit: April to June</p>
+        <p>5. Bhimtal – Best to visit: March to June, September to November</p>
+        <p>6. Lansdowne – Best to visit: March to November</p>
+        <p>7. Kausani – Best to visit: April to June, September to November</p>
+        <p>8. Mukteshwar – Best to visit: March to June, September to November</p>
+        <p>9. Chopta – Best to visit: March to June, October to December</p>
+    </div>
+
+    <div class="category" onclick="toggleContent('pilgrimageSites')">Pilgrimage Sites</div>
+    <div class="content" id="pilgrimageSites">
+        <p>1. Haridwar – Best to visit: February to April, August to October</p>
+        <p>2. Rishikesh – Best to visit: September to November, March to May</p>
+        <p>3. Badrinath – Best to visit: May to October</p>
+        <p>4. Kedarnath – Best to visit: May to October</p>
+        <p>5. Gangotri – Best to visit: April to June, September to October</p>
+        <p>6. Yamunotri – Best to visit: May to October</p>
+        <p>7. Hemkund Sahib – Best to visit: May to October</p>
+    </div>
+
+    <div class="category" onclick="toggleContent('adventure')">Adventure & Trekking Destinations</div>
+    <div class="content" id="adventure">
+        <p>1. Auli – Best to visit: December to February for skiing</p>
+        <p>2. Rishikesh – Best to visit: March to May, September to November for rafting</p>
+        <p>3. Valley of Flowers – Best to visit: July to September</p>
+        <p>4. Roopkund – Best to visit: May to October</p>
+        <p>5. Dayara Bugyal – Best to visit: May to October</p>
+        <p>6. Pindari Glacier – Best to visit: May to October</p>
+        <p>7. Nanda Devi National Park – Best to visit: April to October</p>
+        <p>8. Kedarkantha – Best to visit: December to April for winter trekking</p>
+        <p>9. Nag Tibba – Best to visit: March to June, September to November</p>
+        <p>10. Har Ki Dun – Best to visit: March to June, September to December</p>
+    </div>
+
+    <div class="category" onclick="toggleContent('wildlife')">Wildlife Sanctuaries & National Parks</div>
+    <div class="content" id="wildlife">
+        <p>1. Jim Corbett National Park – Best to visit: November to February</p>
+        <p>2. Rajaji National Park – Best to visit: November to February</p>
+        <p>3. Binsar Wildlife Sanctuary – Best to visit: October to March</p>
+        <p>4. Assan Barrage Bird Sanctuary – Best to visit: November to February</p>
+        <p>5. Govind Wildlife Sanctuary – Best to visit: April to June, October to November</p>
+    </div>
+
+    <div class="category" onclick="toggleContent('lakes')">Lakes</div>
+    <div class="content" id="lakes">
+        <p>1. Naini Lake – Best to visit: March to June, September to November</p>
+        <p>2. Sattal – Best to visit: March to June, September to November</p>
+        <p>3. Bhimtal Lake – Best to visit: March to June, September to November</p>
+        <p>4. Naukuchiatal – Best to visit: March to June, September to November</p>
+        <p>5. Hemkund Lake – Best to visit: June to October</p>
+        <p>6. Dodital – Best to visit: April to June, October to November</p>
+    </div>
+
+    <div class="category" onclick="toggleContent('uniquePlaces')">Unique Places</div>
+    <div class="content" id="uniquePlaces">
+        <p>1. Binsar – Best to visit: October to March</p>
+        <p>2. Chakrata – Best to visit: April to June, September to November</p>
+        <p>3. Munsiyari – Best to visit: March to June, September to November</p>
+        <p>4. Tehri Dam – Best to visit: March to June, September to November</p>
+        <p>5. Abbott Mount – Best to visit: April to June, September to November</p>
+        <p>6. Kanatal – Best to visit: April to June, September to November</p>
+    </div>
+
+    <!-- Chat and Money Transfer Buttons -->
+    <div class="buttons">
+        <button class="button" onclick="openChat()">Chat with Us</button>
+        <button class="button" onclick="transferMoney()">Transfer Money</button>
+    </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uttarakhand Travel Guide - Chat & Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f9;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .chat-container {
+            width: 80%;
+            max-width: 500px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .chat-messages {
+            height: 250px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .chat-input {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .chat-input button {
+            padding: 8px 15px;
+            background-color: #5cb85c;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .destination-section {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #333;
+            border-radius: 8px;
+            color: white;
+        }
+
+        .destination-section h2 {
+            color: #ffdd00;
+            font-size: 24px;
+        }
+
+        .destination-section ul {
+            list-style: none;
+            padding: 0;
+            font-size: 18px;
+        }
+
+        .destination-section li {
+            padding: 8px 0;
+            border-bottom: 1px solid #555;
+        }
+
+        /* Button styling */
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #4a914a;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Uttarakhand Travel Guide!</h1>
+    <div class="chat-container">
+        <div class="chat-messages" id="chatMessages">
+            <!-- Chat messages will appear here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Ask me about travel...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <div class="destination-section">
+        <h2>Popular Destinations in Uttarakhand</h2>
+        <ul>
+            <li>Yamunotri - Best Time: April to June</li>
+            <li>Gangotri - Best Time: April to June, September to November</li>
+            <li>Kedarnath - Best Time: May to June, September to October</li>
+            <li>Badrinath - Best Time: May to June, September to November</li>
+            <li>Nainital - Best Time: March to June, September to November</li>
+            <li>Mussoorie - Best Time: April to June, September to November</li>
+            <li>Rishikesh - Best Time: February to May, October to November</li>
+        </ul>
+    </div>
+
+    <h3>Send Money to Travel Buddy</h3>
+    <button onclick="alert('Feature coming soon!')">Transfer Money</button>
+
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const message = input.value;
+            if (message.trim()) {
+                addMessage("You: " + message);
+                botReply(message);
+                input.value = '';
+            }
+        }
+
+        function addMessage(text) {
+            const chatMessages = document.getElementById('chatMessages');
+            const messageElem = document.createElement('div');
+            messageElem.innerText = text;
+            chatMessages.appendChild(messageElem);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function botReply(userMessage) {
+            let reply = "I'm here to help! Let me know which destination interests you.";
+            if (userMessage.toLowerCase().includes("best time")) {
+                reply = "Most popular times to visit Uttarakhand are April-June and September-November!";
+            }
+            addMessage("Bot: " + reply);
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U & M Travel Mate</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        /* Button Style */
+        .speak-button {
+            background-color: #FF1493;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: background-color 0.3s ease;
+        }
+        .speak-button:hover {
+            background-color: #FF69B4;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to U & M Travel Mate!</h1>
+    <p>Click a button below to learn more about our site in English or Hindi.</p>
+    <button class="speak-button" onclick="introduceSite('english')">🔊 Explain in English</button>
+    <button class="speak-button" onclick="introduceSite('hindi')">🔊 हिंदी में समझाएँ</button>
+
+    <script>
+        function introduceSite(language) {
+            let introText = '';
+            if (language === 'english') {
+                introText = "Welcome to U and M Travel Mate! This website is designed to help travelers connect with like-minded companions heading to the same destination. \
+                Whether you're exploring the natural beauty of Uttarakhand, trekking to famous spots, or planning an adventurous journey, we assist you in finding a travel buddy. \
+                Simply search for a place, meet fellow travelers, and share an unforgettable journey together. Our platform prioritizes safety, and we encourage users to communicate and understand each other's preferences before embarking on their trips. We’re here to make your travel experience memorable, friendly, and safe!";
+            
+            }
+
+            // Set up the speech synthesis
+            const utterance = new SpeechSynthesisUtterance(introText);
+            utterance.rate = 0.9;  // Slower rate for politeness
+            utterance.pitch = 1; // Normal pitch for a warm tone
+
+            // Speak the text
+            speechSynthesis.speak(utterance);
+        }
+    </script>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>U & M Travel Mate</title>
+</head>
+<body>
+    <h1>Welcome to U & M Travel Mate</h1>
+    <p>Find your travel partner and make every journey unforgettable.</p>
+
+    <!-- Demo Link -->
+    <a href="/demo" style="padding: 10px 20px; background-color: #FF69B4; color: white; border-radius: 8px; text-decoration: none;">Explore Demo</a>
+
+    <!-- Other website content -->
+</body>
+</html>
+
